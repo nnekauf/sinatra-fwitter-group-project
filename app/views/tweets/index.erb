@@ -1,0 +1,12 @@
+
+<h1> Welcome, <%=current_user.username%> </h1>
+<% Tweet.all.each do |t| %>
+    <%=t.content%>
+<%end%>
+<%if @tweets.length> 1%>
+   <% @tweets.each do |tweet|%>
+        <%=tweet.content%>
+    <%end%>
+    <%elsif @tweets.length == 1%>
+        <%=@tweets[0].content%>
+   <% end%>
